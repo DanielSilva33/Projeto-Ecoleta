@@ -1,0 +1,27 @@
+{
+  "name": "semananlw",
+  "version": "1.0.0",
+  "description": "Projeto criado e desenvolvido na semana Next Level Week para o aprendizado, criando uma aplicação Web e mobile junto com um banco de dados para salvar os dados das empresas.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielSilva33/Projeto-Ecoleta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielSilva33/Projeto-Ecoleta/issues"
+  },
+  "homepage": "https://github.com/DanielSilva33/Projeto-Ecoleta#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
