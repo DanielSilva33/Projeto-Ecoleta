@@ -7,3 +7,5 @@ Tela inicial do projeto:
 
 Segunda tela do projeto: 
 ![Ecoleta2](https://user-images.githubusercontent.com/51060912/83568819-002dc400-a4fa-11ea-9488-74060605be2f.png)
+
+
