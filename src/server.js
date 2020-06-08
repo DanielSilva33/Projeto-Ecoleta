@@ -21,13 +21,10 @@ server.use(express.static("public"))
 //configurar caminhos da aplicação para a home
 server.get("/", (req, res) => {
    return res.render("index.html")
-}); 
+});
 
 server.get("/create-point", (req, res) => {
-
    // req.query
-
-
    return res.render("create-point.html")
 });
 
@@ -54,26 +51,24 @@ server.post("/savepoint", (req, res) => {
       req.body.items
    ]
 
-      function afterInsertData(err) {
-         if (err) {
-            console.log(err)
-            return res.send("Erro no cadastro!!!")
-         }
-         console.log("Cadastrado com sucesso!!!")
-         console.log(this)
-
-         return res.render("create-point.html", {saved: true})
+   function afterInsertData(err) {
+      if (err) {
+         console.log(err)
+         return res.send("Erro no cadastro!!!")
       }
+      console.log("Cadastrado com sucesso!!!")
+      console.log(this)
 
-      db.run(query, values, afterInsertData);
+      return res.render("create-point.html", { saved: true })
+   }
+
+   db.run(query, values, afterInsertData);
 
 });
 
 server.get("/search", (req, res) => {
-   
    const search = req.query.search
-
-   if(search == ""){
+   if (search == "") {
       //pesquisa vazia 
       return res.render("search.html", { total: 0 })
    }
@@ -82,16 +77,13 @@ server.get("/search", (req, res) => {
       if (err) {
          return console.log(err)
       }
-
       //   console.log("Aqui estão seus registros: ")
       //   console.log(rows)
-
       const total = rows.length
       return res.render("search.html", { places: rows, total: total })
 
    });
 
 });
-
 //ligar o servidor
 server.listen(3000);

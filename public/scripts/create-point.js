@@ -7,7 +7,6 @@ function populateUFs() {
             for( const state of states ){
                 ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
             }
-
         })
 }
 
@@ -43,7 +42,6 @@ document
 
 //itens de coleta:
 //pegar todos os li
-
 const itemsToCollect = document.querySelectorAll(".items-grid li");
 
 for (const item of itemsToCollect){
@@ -59,24 +57,19 @@ function handleSelectedItem(event) {
     const itemLi = event.target;
 
     //add or remove uma classe que aplica css por js
-
     itemLi.classList.toggle("selected")
     const itemId = itemLi.dataset.id;
 
-        //verificar se existe itens selecionados se sim pegar itens selecionados
-
+    //verificar se existe itens selecionados se sim pegar itens selecionados
     const alreadySelected = selectedItems.findIndex( item => {
         return item == itemId
     });
-
     //se ja estiver selecionado tirar do array se ouver o click
-
     if(alreadySelected >= 0) {
         const filteredItems = selectedItems.filter( item => {
             const itemsDifferent = item != itemId
             return itemsDifferent
         })
-
         selectedItems = filteredItems
     }else {
         //se não estiver selecionado adicionar ao array
